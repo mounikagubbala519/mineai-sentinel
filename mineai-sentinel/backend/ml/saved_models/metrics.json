@@ -1,0 +1,60 @@
+{
+  "reserve_model": {
+    "model_name": "RandomForestRegressor",
+    "mae": 530.223,
+    "rmse": 579.566,
+    "r2": 0.5406,
+    "feature_importances": {
+      "depth_m": 0.5894644658282859,
+      "rock_density_gt_m3": 0.07423308411279428,
+      "drill_hole_density": 0.020613809770065914,
+      "elevation_m": 0.022143993618750146,
+      "soil_moisture_pct": 0.02948661857897582,
+      "ndvi_index": 0.082099539707683,
+      "lst_temp_c": 0.030849678220663142,
+      "annual_rainfall_mm": 0.1511088101627818
+    }
+  },
+  "production_model": {
+    "model_name": "GradientBoostingRegressor with Lag Features",
+    "mae": 54.454,
+    "rmse": 71.304,
+    "r2": 0.9672,
+    "feature_importances": {
+      "target_production_tonnes": 9.154016323227355e-07,
+      "operating_hours": 0.11311728063614569,
+      "active_machines_count": 0.5360313769026506,
+      "blasting_delay_hours": 0.025988468917582993,
+      "maintenance_delay_hours": 0.23494560685723873,
+      "rainfall_mm": 0.05311540893237416,
+      "temperature_c": 9.741925150293914e-05,
+      "avg_mn_grade_mined": 0.03561736683905356,
+      "lag_1d": 0.00023093894210274857,
+      "lag_7d": 0.00023019222418880293,
+      "rolling_7d_mean": 0.00016704478400994855,
+      "lag_30d_mean": 0.0004579803115174731
+    }
+  },
+  "shortfall_model": {
+    "model_name": "HistGradientBoostingClassifier",
+    "accuracy": 0.9574,
+    "precision": 0.944,
+    "recall": 0.9574,
+    "f1": 0.948,
+    "roc_auc": 0.9901,
+    "feature_importances": {
+      "target_production_tonnes": 0.08333333333333333,
+      "operating_hours": 0.08333333333333333,
+      "active_machines_count": 0.08333333333333333,
+      "blasting_delay_hours": 0.08333333333333333,
+      "maintenance_delay_hours": 0.08333333333333333,
+      "rainfall_mm": 0.08333333333333333,
+      "temperature_c": 0.08333333333333333,
+      "avg_mn_grade_mined": 0.08333333333333333,
+      "lag_1d": 0.08333333333333333,
+      "lag_7d": 0.08333333333333333,
+      "rolling_7d_mean": 0.08333333333333333,
+      "lag_30d_mean": 0.08333333333333333
+    }
+  }
+}

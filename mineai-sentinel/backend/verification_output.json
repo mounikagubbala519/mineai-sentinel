@@ -1,0 +1,608 @@
+{
+  "health": {
+    "status": "healthy",
+    "project": "MineAI Sentinel",
+    "version": "1.0.0",
+    "demo_mode": true,
+    "data_provider": "SyntheticDataProvider"
+  },
+  "dashboard_summary": {
+    "demo_mode": true,
+    "demo_badge": "Demo Mode \u2014 Synthetic Dataset",
+    "total_estimated_reserves_mt": 43178.3,
+    "recoverable_reserves_mt": 36452.8,
+    "current_daily_production_tonnes": 442.4,
+    "target_daily_production_tonnes": 1640.0,
+    "forecasted_daily_production_tonnes": 415.8,
+    "production_gap_tonnes": 1224.2,
+    "shortfall_probability_pct": 99.0,
+    "equipment_availability_pct": 89.0,
+    "environmental_risk_score": 26.4,
+    "overall_risk_score": 47.3,
+    "overall_risk_level": "MEDIUM",
+    "active_alerts": [
+      {
+        "id": "ALT-PROD-001",
+        "fingerprint": "PRODUCTION_SHORTFALL:Balaghat Central Sector:gap",
+        "alert_type": "PRODUCTION_SHORTFALL",
+        "severity": "CRITICAL",
+        "title": "Production Shortfall Predicted",
+        "message": "Expected daily ore production (399.2 TPD) is 1240.8 TPD below target (1640.0 TPD).",
+        "mine_block": "Balaghat Central Sector",
+        "risk_score": 36.9,
+        "probability": 99.0,
+        "created_at": "2026-09-24T10:14:43.957861+00:00",
+        "updated_at": "2026-09-28T11:57:52.160172+00:00",
+        "status": "ACTIVE",
+        "causes": [
+          {
+            "factor": "Target vs Forecast Gap",
+            "value": "1240.8 Tonnes/day"
+          },
+          {
+            "factor": "Equipment Maintenance Delay",
+            "value": "3.4 hrs/shift"
+          },
+          {
+            "factor": "Blasting clearance delay",
+            "value": "1.1 hrs"
+          }
+        ],
+        "recommended_actions": [
+          "Re-deploy 2 available CAT haulers from low-priority reserve block (BLK-B04) to high-yield Balaghat Central vein to compensate for 3.4393333333333334h breakdown loss.",
+          "Shortfall risk probability reached 99.0%. Prioritize extraction from high-grade accessible blocks (Mn > 40%) to satisfy monthly delivery contracts."
+        ],
+        "expected_impact": {
+          "target_production_tpd": 1640.0,
+          "predicted_production_tpd": 399.2,
+          "expected_shortfall_tpd": 1240.8,
+          "monthly_revenue_risk": "\u20b931.64 Cr"
+        },
+        "xai_factors": [
+          {
+            "factor": "Equipment Downtime",
+            "percentage": 37.4
+          },
+          {
+            "factor": "Active Machinery Ratio",
+            "percentage": 29.0
+          },
+          {
+            "factor": "Rainfall & Weather",
+            "percentage": 13.4
+          },
+          {
+            "factor": "Blasting Delay",
+            "percentage": 10.4
+          },
+          {
+            "factor": "Target Production Pressure",
+            "percentage": 9.9
+          }
+        ],
+        "simulator_params": {
+          "equipment_availability_pct": 88.0,
+          "downtime_hours": 1.5,
+          "rainfall_mm": 9.846666666666666,
+          "blasting_delay_hours": 1.0,
+          "working_hours": 18.0,
+          "production_target_tonnes": 1640.0,
+          "active_machines_count": 12
+        }
+      },
+      {
+        "id": "ALT-EQUI-002",
+        "fingerprint": "EQUIPMENT:Heavy Fleet:avail_critical",
+        "alert_type": "EQUIPMENT",
+        "severity": "MEDIUM",
+        "title": "Fleet Availability Critical",
+        "message": "Heavy machinery availability dropped to 89.0%. 0 machines degraded.",
+        "mine_block": "Ukwa Pit & Haul Route",
+        "risk_score": 19.9,
+        "probability": 36.5,
+        "created_at": "2026-09-24T10:14:43.957861+00:00",
+        "updated_at": "2026-09-28T11:57:52.160172+00:00",
+        "status": "ACTIVE",
+        "causes": [
+          {
+            "factor": "Fleet Availability Ratio",
+            "value": "89.0%"
+          },
+          {
+            "factor": "Unavailable Asset Count",
+            "value": "0 machines"
+          },
+          {
+            "factor": "Most Critical Breakdown Asset",
+            "value": "EQ-CAT-988K-01"
+          },
+          {
+            "factor": "Total Fleet Monthly Downtime",
+            "value": "1985.9 hrs"
+          }
+        ],
+        "recommended_actions": [
+          "Re-deploy standby CAT excavators to compensate for breakdown of EQ-CAT-988K-01.",
+          "Prioritize expedited hydraulic pump replacement during upcoming shift change.",
+          "Initiate emergency pit route maintenance."
+        ],
+        "expected_impact": {
+          "fleet_availability": "89.0%",
+          "unavailable_machines": 0,
+          "most_affected_asset": "EQ-CAT-988K-01",
+          "downtime_hours": "1985.9 hrs"
+        },
+        "xai_factors": [
+          {
+            "factor": "Equipment Breakdown Frequency",
+            "percentage": 42.5
+          },
+          {
+            "factor": "Monthly Maintenance Hours",
+            "percentage": 31.0
+          },
+          {
+            "factor": "Engine Operating Hours Age",
+            "percentage": 26.5
+          }
+        ],
+        "simulator_params": {
+          "equipment_availability_pct": 90.0,
+          "downtime_hours": 1.0,
+          "rainfall_mm": 9.846666666666666,
+          "blasting_delay_hours": 1.1453333333333333,
+          "working_hours": 17.813333333333333,
+          "production_target_tonnes": 1640.0,
+          "active_machines_count": 10
+        }
+      },
+      {
+        "id": "ALT-LOW_-003",
+        "fingerprint": "LOW_ORE_AVAILABILITY:BLK-B01:grade_deficit",
+        "alert_type": "LOW_ORE_AVAILABILITY",
+        "severity": "MEDIUM",
+        "title": "Low Ore Grade & Recoverable Reserve Deficit",
+        "message": "Block BLK-B01 (Balaghat Central Vein) manganese grade dropped to 30.3% Mn.",
+        "mine_block": "BLK-B01 (Balaghat Central Vein)",
+        "risk_score": 53.9,
+        "probability": 54.1,
+        "created_at": "2026-09-24T10:14:43.957861+00:00",
+        "updated_at": "2026-09-28T11:57:52.160172+00:00",
+        "status": "ACTIVE",
+        "causes": [
+          {
+            "factor": "Manganese Grade %",
+            "value": "30.3% Mn (Target: >38%)"
+          },
+          {
+            "factor": "Estimated Block Tonnage",
+            "value": "2688.2 MT"
+          },
+          {
+            "factor": "Recoverable Ore Reserve",
+            "value": "2128.7 MT"
+          }
+        ],
+        "recommended_actions": [
+          "Blend low-grade ore from BLK-B01 with high-grade stock (Mn > 44%) from Balaghat Central Vein.",
+          "Re-evaluate diamond core drilling density for deeper ore seams."
+        ],
+        "expected_impact": {
+          "estimated_tonnage": "2688.2 MT",
+          "recoverable_tonnage": "2128.7 MT",
+          "mn_grade_pct": "30.3% Mn"
+        },
+        "xai_factors": [
+          {
+            "factor": "Borehole Mn Grade Analysis",
+            "percentage": 50.0
+          },
+          {
+            "factor": "Drill Depth Penalty",
+            "percentage": 30.0
+          },
+          {
+            "factor": "Rock Density Specific Gravity",
+            "percentage": 20.0
+          }
+        ],
+        "simulator_params": {
+          "equipment_availability_pct": 88.97200000000001,
+          "downtime_hours": 3.4393333333333334,
+          "rainfall_mm": 9.846666666666666,
+          "blasting_delay_hours": 1.1453333333333333,
+          "working_hours": 17.813333333333333,
+          "production_target_tonnes": 1640.0,
+          "active_machines_count": 8
+        }
+      }
+    ]
+  },
+  "active_alerts": {
+    "total_active_count": 3,
+    "critical_count": 1,
+    "high_count": 0,
+    "medium_count": 2,
+    "low_count": 0,
+    "alerts": [
+      {
+        "id": "ALT-PROD-001",
+        "fingerprint": "PRODUCTION_SHORTFALL:Balaghat Central Sector:gap",
+        "alert_type": "PRODUCTION_SHORTFALL",
+        "severity": "CRITICAL",
+        "title": "Production Shortfall Predicted",
+        "message": "Expected daily ore production (399.2 TPD) is 1240.8 TPD below target (1640.0 TPD).",
+        "mine_block": "Balaghat Central Sector",
+        "risk_score": 36.9,
+        "probability": 99.0,
+        "created_at": "2026-09-24T10:14:43.957861+00:00",
+        "updated_at": "2026-09-28T11:57:52.160172+00:00",
+        "status": "ACTIVE",
+        "causes": [
+          {
+            "factor": "Target vs Forecast Gap",
+            "value": "1240.8 Tonnes/day"
+          },
+          {
+            "factor": "Equipment Maintenance Delay",
+            "value": "3.4 hrs/shift"
+          },
+          {
+            "factor": "Blasting clearance delay",
+            "value": "1.1 hrs"
+          }
+        ],
+        "recommended_actions": [
+          "Re-deploy 2 available CAT haulers from low-priority reserve block (BLK-B04) to high-yield Balaghat Central vein to compensate for 3.4393333333333334h breakdown loss.",
+          "Shortfall risk probability reached 99.0%. Prioritize extraction from high-grade accessible blocks (Mn > 40%) to satisfy monthly delivery contracts."
+        ],
+        "expected_impact": {
+          "target_production_tpd": 1640.0,
+          "predicted_production_tpd": 399.2,
+          "expected_shortfall_tpd": 1240.8,
+          "monthly_revenue_risk": "\u20b931.64 Cr"
+        },
+        "xai_factors": [
+          {
+            "factor": "Equipment Downtime",
+            "percentage": 37.4
+          },
+          {
+            "factor": "Active Machinery Ratio",
+            "percentage": 29.0
+          },
+          {
+            "factor": "Rainfall & Weather",
+            "percentage": 13.4
+          },
+          {
+            "factor": "Blasting Delay",
+            "percentage": 10.4
+          },
+          {
+            "factor": "Target Production Pressure",
+            "percentage": 9.9
+          }
+        ],
+        "simulator_params": {
+          "equipment_availability_pct": 88.0,
+          "downtime_hours": 1.5,
+          "rainfall_mm": 9.846666666666666,
+          "blasting_delay_hours": 1.0,
+          "working_hours": 18.0,
+          "production_target_tonnes": 1640.0,
+          "active_machines_count": 12
+        }
+      },
+      {
+        "id": "ALT-EQUI-002",
+        "fingerprint": "EQUIPMENT:Heavy Fleet:avail_critical",
+        "alert_type": "EQUIPMENT",
+        "severity": "MEDIUM",
+        "title": "Fleet Availability Critical",
+        "message": "Heavy machinery availability dropped to 89.0%. 0 machines degraded.",
+        "mine_block": "Ukwa Pit & Haul Route",
+        "risk_score": 19.9,
+        "probability": 36.5,
+        "created_at": "2026-09-24T10:14:43.957861+00:00",
+        "updated_at": "2026-09-28T11:57:52.160172+00:00",
+        "status": "ACTIVE",
+        "causes": [
+          {
+            "factor": "Fleet Availability Ratio",
+            "value": "89.0%"
+          },
+          {
+            "factor": "Unavailable Asset Count",
+            "value": "0 machines"
+          },
+          {
+            "factor": "Most Critical Breakdown Asset",
+            "value": "EQ-CAT-988K-01"
+          },
+          {
+            "factor": "Total Fleet Monthly Downtime",
+            "value": "1985.9 hrs"
+          }
+        ],
+        "recommended_actions": [
+          "Re-deploy standby CAT excavators to compensate for breakdown of EQ-CAT-988K-01.",
+          "Prioritize expedited hydraulic pump replacement during upcoming shift change.",
+          "Initiate emergency pit route maintenance."
+        ],
+        "expected_impact": {
+          "fleet_availability": "89.0%",
+          "unavailable_machines": 0,
+          "most_affected_asset": "EQ-CAT-988K-01",
+          "downtime_hours": "1985.9 hrs"
+        },
+        "xai_factors": [
+          {
+            "factor": "Equipment Breakdown Frequency",
+            "percentage": 42.5
+          },
+          {
+            "factor": "Monthly Maintenance Hours",
+            "percentage": 31.0
+          },
+          {
+            "factor": "Engine Operating Hours Age",
+            "percentage": 26.5
+          }
+        ],
+        "simulator_params": {
+          "equipment_availability_pct": 90.0,
+          "downtime_hours": 1.0,
+          "rainfall_mm": 9.846666666666666,
+          "blasting_delay_hours": 1.1453333333333333,
+          "working_hours": 17.813333333333333,
+          "production_target_tonnes": 1640.0,
+          "active_machines_count": 10
+        }
+      },
+      {
+        "id": "ALT-LOW_-003",
+        "fingerprint": "LOW_ORE_AVAILABILITY:BLK-B01:grade_deficit",
+        "alert_type": "LOW_ORE_AVAILABILITY",
+        "severity": "MEDIUM",
+        "title": "Low Ore Grade & Recoverable Reserve Deficit",
+        "message": "Block BLK-B01 (Balaghat Central Vein) manganese grade dropped to 30.3% Mn.",
+        "mine_block": "BLK-B01 (Balaghat Central Vein)",
+        "risk_score": 53.9,
+        "probability": 54.1,
+        "created_at": "2026-09-24T10:14:43.957861+00:00",
+        "updated_at": "2026-09-28T11:57:52.160172+00:00",
+        "status": "ACTIVE",
+        "causes": [
+          {
+            "factor": "Manganese Grade %",
+            "value": "30.3% Mn (Target: >38%)"
+          },
+          {
+            "factor": "Estimated Block Tonnage",
+            "value": "2688.2 MT"
+          },
+          {
+            "factor": "Recoverable Ore Reserve",
+            "value": "2128.7 MT"
+          }
+        ],
+        "recommended_actions": [
+          "Blend low-grade ore from BLK-B01 with high-grade stock (Mn > 44%) from Balaghat Central Vein.",
+          "Re-evaluate diamond core drilling density for deeper ore seams."
+        ],
+        "expected_impact": {
+          "estimated_tonnage": "2688.2 MT",
+          "recoverable_tonnage": "2128.7 MT",
+          "mn_grade_pct": "30.3% Mn"
+        },
+        "xai_factors": [
+          {
+            "factor": "Borehole Mn Grade Analysis",
+            "percentage": 50.0
+          },
+          {
+            "factor": "Drill Depth Penalty",
+            "percentage": 30.0
+          },
+          {
+            "factor": "Rock Density Specific Gravity",
+            "percentage": 20.0
+          }
+        ],
+        "simulator_params": {
+          "equipment_availability_pct": 88.97200000000001,
+          "downtime_hours": 3.4393333333333334,
+          "rainfall_mm": 9.846666666666666,
+          "blasting_delay_hours": 1.1453333333333333,
+          "working_hours": 17.813333333333333,
+          "production_target_tonnes": 1640.0,
+          "active_machines_count": 8
+        }
+      }
+    ]
+  },
+  "operational_risk": {
+    "overall_risk_score": 47.3,
+    "risk_level": "MEDIUM",
+    "factor_breakdown": [
+      {
+        "factor": "Equipment Downtime",
+        "contribution": 25.0,
+        "status": "CRITICAL"
+      },
+      {
+        "factor": "Blasting Clearance Delay",
+        "contribution": 10.0,
+        "status": "WARNING"
+      },
+      {
+        "factor": "Heavy Rainfall & Soil Moisture",
+        "contribution": 3.8,
+        "status": "NORMAL"
+      },
+      {
+        "factor": "Reserve & Ore Grade Deficit",
+        "contribution": 3.8,
+        "status": "NORMAL"
+      },
+      {
+        "factor": "Low Equipment Availability",
+        "contribution": 2.7,
+        "status": "NORMAL"
+      },
+      {
+        "factor": "Production Target Pressure",
+        "contribution": 2.0,
+        "status": "NORMAL"
+      }
+    ]
+  },
+  "recommendations": {
+    "disclaimer": "Prototype decision-support recommendations. Final operational decisions must be made by qualified mining engineering and safety professionals.",
+    "active_recommendations": [
+      {
+        "id": "REC-001",
+        "title": "Equipment Fleet Re-allocation",
+        "priority": "HIGH",
+        "affected_factor": "Equipment Downtime",
+        "suggested_action": "Re-deploy 2 available CAT haulers from low-priority reserve block (BLK-B04) to high-yield Balaghat Central vein to compensate for 7.943600000000001h breakdown loss.",
+        "expected_objective": "+180 Tonnes/day production recovery",
+        "risk_category": "EQUIPMENT"
+      },
+      {
+        "id": "REC-002",
+        "title": "Blasting Clearance & Window Optimization",
+        "priority": "MEDIUM",
+        "affected_factor": "Blasting Clearance",
+        "suggested_action": "Blasting delay is currently 2.0h above baseline. Coordinate immediate explosive clearance with safety officers for the upcoming 14:00 shift window.",
+        "expected_objective": "Eliminate 90 minutes of downstream mucking delays",
+        "risk_category": "BLASTING"
+      }
+    ]
+  },
+  "production_forecast": {
+    "predicted_next_day_tonnes": 750.2,
+    "predicted_7day_tonnes": 5180.5,
+    "predicted_30day_tonnes": 22293.9,
+    "target_production_tonnes": 1800.0,
+    "production_gap_tonnes": 1049.8
+  },
+  "shortfall_predict": {
+    "shortfall_probability_pct": 79.0,
+    "risk_category": "HIGH",
+    "target_production_tonnes": 1800.0,
+    "expected_production_tonnes": 1350.0,
+    "expected_gap_tonnes": 450.0,
+    "contributing_factors": [
+      {
+        "factor": "Equipment Downtime",
+        "percentage": 29.3
+      },
+      {
+        "factor": "Rainfall & Weather",
+        "percentage": 26.1
+      },
+      {
+        "factor": "Active Machinery Ratio",
+        "percentage": 22.3
+      },
+      {
+        "factor": "Blasting Delay",
+        "percentage": 13.9
+      },
+      {
+        "factor": "Target Production Pressure",
+        "percentage": 8.4
+      }
+    ]
+  },
+  "what_if": {
+    "before": {
+      "expected_production_tonnes": 121.6,
+      "production_target_tonnes": 1800.0,
+      "production_gap_tonnes": 1678.4,
+      "shortfall_probability_pct": 99.0,
+      "risk_score": 68.2,
+      "risk_category": "HIGH"
+    },
+    "after": {
+      "expected_production_tonnes": 1429.1,
+      "production_target_tonnes": 1800.0,
+      "production_gap_tonnes": 370.9,
+      "shortfall_probability_pct": 45.6,
+      "risk_score": 19.7,
+      "risk_category": "LOW"
+    },
+    "delta": {
+      "production_change_tonnes": 1307.5,
+      "production_gap_change": -1307.5,
+      "shortfall_prob_change_pct": -53.4,
+      "risk_score_change": -48.5,
+      "status": "IMPROVED"
+    }
+  },
+  "model_metrics": {
+    "disclaimer": "Metrics are calculated using the prototype synthetic dataset and do not represent real-world MOIL performance.",
+    "metrics": {
+      "reserve_model": {
+        "model_name": "RandomForestRegressor",
+        "mae": 530.223,
+        "rmse": 579.566,
+        "r2": 0.5406,
+        "feature_importances": {
+          "depth_m": 0.5894644658282859,
+          "rock_density_gt_m3": 0.07423308411279428,
+          "drill_hole_density": 0.020613809770065914,
+          "elevation_m": 0.022143993618750146,
+          "soil_moisture_pct": 0.02948661857897582,
+          "ndvi_index": 0.082099539707683,
+          "lst_temp_c": 0.030849678220663142,
+          "annual_rainfall_mm": 0.1511088101627818
+        }
+      },
+      "production_model": {
+        "model_name": "GradientBoostingRegressor with Lag Features",
+        "mae": 54.454,
+        "rmse": 71.304,
+        "r2": 0.9672,
+        "feature_importances": {
+          "target_production_tonnes": 9.154016323227355e-07,
+          "operating_hours": 0.11311728063614569,
+          "active_machines_count": 0.5360313769026506,
+          "blasting_delay_hours": 0.025988468917582993,
+          "maintenance_delay_hours": 0.23494560685723873,
+          "rainfall_mm": 0.05311540893237416,
+          "temperature_c": 9.741925150293914e-05,
+          "avg_mn_grade_mined": 0.03561736683905356,
+          "lag_1d": 0.00023093894210274857,
+          "lag_7d": 0.00023019222418880293,
+          "rolling_7d_mean": 0.00016704478400994855,
+          "lag_30d_mean": 0.0004579803115174731
+        }
+      },
+      "shortfall_model": {
+        "model_name": "HistGradientBoostingClassifier",
+        "accuracy": 0.9574,
+        "precision": 0.944,
+        "recall": 0.9574,
+        "f1": 0.948,
+        "roc_auc": 0.9901,
+        "feature_importances": {
+          "target_production_tonnes": 0.08333333333333333,
+          "operating_hours": 0.08333333333333333,
+          "active_machines_count": 0.08333333333333333,
+          "blasting_delay_hours": 0.08333333333333333,
+          "maintenance_delay_hours": 0.08333333333333333,
+          "rainfall_mm": 0.08333333333333333,
+          "temperature_c": 0.08333333333333333,
+          "avg_mn_grade_mined": 0.08333333333333333,
+          "lag_1d": 0.08333333333333333,
+          "lag_7d": 0.08333333333333333,
+          "rolling_7d_mean": 0.08333333333333333,
+          "lag_30d_mean": 0.08333333333333333
+        }
+      }
+    }
+  }
+}
